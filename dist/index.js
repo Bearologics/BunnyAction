@@ -2810,7 +2810,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_fetch_1 = __importDefault(__webpack_require__(454));
-const core_1 = __webpack_require__(470);
 function dangerouslyDeleteAllExistingData(storageName, accessKey) {
     return node_fetch_1.default(`https://storage.bunnycdn.com/${storageName}/`, {
         method: "DELETE",
@@ -2818,12 +2817,11 @@ function dangerouslyDeleteAllExistingData(storageName, accessKey) {
             AccessKey: accessKey,
         },
     }).then((response) => {
-        if (response.status === 200) {
-            core_1.info(`Existing data deleted successfully`);
-        }
-        else {
-            throw new Error(`Error deleting existing data ${response.status}.`);
-        }
+        // if (response.status === 200) {
+        //   info(`Existing data deleted successfully`);
+        // } else {
+        //   throw new Error(`Error deleting existing data ${response.status}.`);
+        // }
         return response;
     });
 }

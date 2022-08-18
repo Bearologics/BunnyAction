@@ -11,11 +11,11 @@ function dangerouslyDeleteAllExistingData(
       AccessKey: accessKey,
     },
   }).then((response) => {
-    if (response.status === 200) {
-      info(`Existing data deleted successfully`);
-    } else {
-      throw new Error(`Error deleting existing data ${response.status}.`);
-    }
+    // if (response.status === 200) {
+    //   info(`Existing data deleted successfully`);
+    // } else {
+    //   throw new Error(`Error deleting existing data ${response.status}.`);
+    // }
     return response;
   });
 }
