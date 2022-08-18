@@ -1,11 +1,14 @@
 import fetch from "node-fetch";
 import { info } from "@actions/core";
 
-function purgeZone(zoneId: string, zoneKey: string) {
-  return fetch(`https://bunnycdn.com/api/pullzone/purgeCache?id=${zoneId}`, {
+function dangerouslyDeleteAllExistingData(
+  storageName: string,
+  accessKey: string
+) {
+  return fetch(`https://storage.bunnycdn.com/${storageName}/`, {
     method: "GET",
     headers: {
-      AccessKey: zoneKey,
+      AccessKey: accessKey,
     },
   }).then((response) => {
     if (response.status === 200) {
@@ -22,8 +25,8 @@ function purgeZone(zoneId: string, zoneKey: string) {
 }
 
 export default async function run(
-  zoneId: string,
-  zoneKey: string
+  storageName: string,
+  accessKey: string
 ): Promise<void> {
-  await purgeZone(zoneId, zoneKey);
+  await dangerouslyDeleteAllExistingData(storageName, accessKey);
 }

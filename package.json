@@ -1,5 +1,5 @@
 {
-  "name": "bunnycdn-gh-action",
+  "name": "bunnyaction",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Snider/bunnycdn-gh-action.git"
+    "url": "git+https://github.com/Bearologics/BunnyAction.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Snider/bunnycdn-gh-action/issues"
+    "url": "https://github.com/Bearologics/BunnyAction/issues"
   },
-  "homepage": "https://github.com/Snider/bunnycdn-gh-action#readme",
+  "homepage": "https://github.com/Bearologics/BunnyAction#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^3.0.0",

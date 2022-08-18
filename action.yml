@@ -1,25 +1,28 @@
-name: 'BunnyCDN GH Action'
-description: 'BunnyCDN GH Action'
+name: "BunnyCDN GH Action"
+description: "BunnyCDN GH Action"
 inputs:
   source:
-    description: 'target directory to be deployed'
+    description: "target directory to be deployed"
     required: false
-    default: './dist'
+    default: "./dist"
   storageZoneName:
-    description: 'storage zone name'
+    description: "storage zone name"
     required: false
   accessKey:
-    description: 'Storage zone access key'
+    description: "Storage zone access key"
     required: false
   zoneId:
-    description: 'Storage zone id'
+    description: "Storage zone id"
     required: false
   zoneKey:
-    description: 'Storage zone key'
+    description: "Storage zone key"
+    required: false
+  dangerouslyDeleteAllExistingData:
+    description: "If set to true will delete all files before uploading new files"
     required: false
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
 branding:
-  icon: 'upload-cloud'
-  color: 'orange'
+  icon: "upload-cloud"
+  color: "orange"

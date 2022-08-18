@@ -1,35 +1,38 @@
-# bunnycdn-gh-action
+# BunnyAction
 
-This action deploys selected directory to BunnyCDN storage. 
+This action deploys the specified directory to BunnyCDN.
 
+## Upload and purge Pull Zone
 
-## Upload and purge pull zone
-````
+```
 - name: Deploy to BunnyCDN
-  uses: Snider/bunnycdn-gh-action@v2.0.0
+  uses: Bearologics/BunnyAction@v1
   with:
     source: "dist"
     storageZoneName: "myzone"
     accessKey: "${{ secrets.BUNNY_CDN_STORAGE_KEY }}"
     zoneId: "${{ secrets.BUNNY_CDN_PULL_ZONE_ID }}"
     zoneKey: "${{ secrets.BUNNY_CDN_ZONE_KEY }}"
-````
+    dangerouslyDeleteAllExistingData: true
+```
 
-## Upload 
-````
+## Upload only
+
+```
 - name: Upload to BunnyCDN
-  uses: Snider/bunnycdn-gh-action@v2.0.0
+  uses: Bearologics/BunnyAction@v1
   with:
     source: "dist"
     storageZoneName: "myzone"
     accessKey: "${{ secrets.BUNNY_CDN_STORAGE_KEY }}"
-````
+```
 
-##  purge pull zone
-````
+## Purge Pull Zone
+
+```
 - name: Purge BunnyCDN
-  uses: Snider/bunnycdn-gh-action@v2.0.0
+  uses: Bearologics/BunnyAction@v1
   with:
     zoneId: "${{ secrets.BUNNY_CDN_PULL_ZONE_ID }}"
     zoneKey: "${{ secrets.BUNNY_CDN_ZONE_KEY }}"
-````
+```
