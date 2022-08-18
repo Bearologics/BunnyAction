@@ -11389,10 +11389,10 @@ function purgeZone(zoneId, accessKey) {
             core_1.info(`Cache purged`);
         }
         else if (response.status === 401) {
-            core_1.info(`Auth failed`);
+            throw new Error(`Auth failed`);
         }
         else if (response.status === 404) {
-            core_1.info(`Invalid zoneId`);
+            throw new Error(`Invalid zoneId`);
         }
         else {
             throw new Error(`Error purging cache ${response.status}.`);

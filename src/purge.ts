@@ -11,9 +11,9 @@ function purgeZone(zoneId: string, accessKey: string) {
     if (response.status === 204) {
       info(`Cache purged`);
     } else if (response.status === 401) {
-      info(`Auth failed`);
+      throw new Error(`Auth failed`);
     } else if (response.status === 404) {
-      info(`Invalid zoneId`);
+      throw new Error(`Invalid zoneId`);
     } else {
       throw new Error(`Error purging cache ${response.status}.`);
     }
