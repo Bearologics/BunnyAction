@@ -12,13 +12,9 @@ function dangerouslyDeleteAllExistingData(
     },
   }).then((response) => {
     if (response.status === 200) {
-      info(`Cache purged`);
-    } else if (response.status === 401) {
-      info(`Auth failed`);
-    } else if (response.status === 404) {
-      info(`Invalid zoneId`);
+      info(`Existing data deleted successfully`);
     } else {
-      throw new Error(`Error purging cache ${response.status}.`);
+      throw new Error(`Error deleting existing data ${response.status}.`);
     }
     return response;
   });

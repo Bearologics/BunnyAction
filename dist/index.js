@@ -2819,16 +2819,10 @@ function dangerouslyDeleteAllExistingData(storageName, accessKey) {
         },
     }).then((response) => {
         if (response.status === 200) {
-            core_1.info(`Cache purged`);
-        }
-        else if (response.status === 401) {
-            core_1.info(`Auth failed`);
-        }
-        else if (response.status === 404) {
-            core_1.info(`Invalid zoneId`);
+            core_1.info(`Existing data deleted successfully`);
         }
         else {
-            throw new Error(`Error purging cache ${response.status}.`);
+            throw new Error(`Error deleting existing data ${response.status}.`);
         }
         return response;
     });
