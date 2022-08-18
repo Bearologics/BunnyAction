@@ -27,7 +27,7 @@ async function run() {
     }
 
     if (zoneId && zoneKey) {
-      await purge(zoneId, accessKey);
+      await purge(zoneId, zoneKey);
     }
   } catch (error) {
     setFailed(error);

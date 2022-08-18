@@ -5025,7 +5025,7 @@ async function run() {
             await uploader_1.default(source, storageZoneName, accessKey);
         }
         if (zoneId && zoneKey) {
-            await purge_1.default(zoneId, accessKey);
+            await purge_1.default(zoneId, zoneKey);
         }
     }
     catch (error) {
