@@ -11379,6 +11379,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_fetch_1 = __importDefault(__webpack_require__(454));
 const core_1 = __webpack_require__(470);
 function purgeZone(zoneId, accessKey) {
+    core_1.info(`Purging ${`https://api.bunny.net/pullzone/${zoneId}/purgeCache`}`);
     return node_fetch_1.default(`https://api.bunny.net/pullzone/${zoneId}/purgeCache`, {
         method: "POST",
         headers: {

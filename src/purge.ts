@@ -2,6 +2,8 @@ import fetch from "node-fetch";
 import { info } from "@actions/core";
 
 function purgeZone(zoneId: string, accessKey: string) {
+  info(`Purging ${`https://api.bunny.net/pullzone/${zoneId}/purgeCache`}`);
+
   return fetch(`https://api.bunny.net/pullzone/${zoneId}/purgeCache`, {
     method: "POST",
     headers: {
