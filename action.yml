@@ -1,5 +1,5 @@
-name: "BunnyCDN GH Action"
-description: "BunnyCDN GH Action"
+name: "BunnyAction"
+description: "BunnyCDN GitHub Action for deploying files to Bunny Storage"
 inputs:
   source:
     description: "target directory to be deployed"
