@@ -2813,7 +2813,7 @@ const node_fetch_1 = __importDefault(__webpack_require__(454));
 const core_1 = __webpack_require__(470);
 function dangerouslyDeleteAllExistingData(storageName, accessKey) {
     return node_fetch_1.default(`https://storage.bunnycdn.com/${storageName}/`, {
-        method: "GET",
+        method: "DELETE",
         headers: {
             AccessKey: accessKey,
         },
