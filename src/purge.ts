@@ -1,11 +1,11 @@
 import fetch from "node-fetch";
 import { info } from "@actions/core";
 
-function purgeZone(zoneId: string, zoneKey: string) {
+function purgeZone(zoneId: string, accessKey: string) {
   return fetch(`https://api.bunny.net/pullzone/${zoneId}/purgeCache`, {
     method: "POST",
     headers: {
-      AccessKey: zoneKey,
+      AccessKey: accessKey,
     },
   }).then((response) => {
     if (response.status === 204) {
@@ -23,7 +23,7 @@ function purgeZone(zoneId: string, zoneKey: string) {
 
 export default async function run(
   zoneId: string,
-  zoneKey: string
+  accessKey: string
 ): Promise<void> {
-  await purgeZone(zoneId, zoneKey);
+  await purgeZone(zoneId, accessKey);
 }
