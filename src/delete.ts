@@ -6,7 +6,7 @@ function dangerouslyDeleteAllExistingData(
   accessKey: string
 ) {
   return fetch(`https://storage.bunnycdn.com/${storageName}/`, {
-    method: "GET",
+    method: "DELETE",
     headers: {
       AccessKey: accessKey,
     },
