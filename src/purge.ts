@@ -2,13 +2,13 @@ import fetch from "node-fetch";
 import { info } from "@actions/core";
 
 function purgeZone(zoneId: string, zoneKey: string) {
-  return fetch(`https://bunnycdn.com/api/pullzone/purgeCache?id=${zoneId}`, {
-    method: "GET",
+  return fetch(`https://api.bunny.net/pullzone/${zoneId}/purgeCache`, {
+    method: "POST",
     headers: {
       AccessKey: zoneKey,
     },
   }).then((response) => {
-    if (response.status === 200) {
+    if (response.status === 204) {
       info(`Cache purged`);
     } else if (response.status === 401) {
       info(`Auth failed`);

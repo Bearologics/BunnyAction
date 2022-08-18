@@ -11379,13 +11379,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_fetch_1 = __importDefault(__webpack_require__(454));
 const core_1 = __webpack_require__(470);
 function purgeZone(zoneId, zoneKey) {
-    return node_fetch_1.default(`https://bunnycdn.com/api/pullzone/purgeCache?id=${zoneId}`, {
-        method: "GET",
+    return node_fetch_1.default(`https://api.bunny.net/pullzone/${zoneId}/purgeCache`, {
+        method: "POST",
         headers: {
             AccessKey: zoneKey,
         },
     }).then((response) => {
-        if (response.status === 200) {
+        if (response.status === 204) {
             core_1.info(`Cache purged`);
         }
         else if (response.status === 401) {
