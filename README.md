@@ -6,7 +6,7 @@ This action deploys the specified directory to BunnyCDN.
 
 ```
 - name: Deploy to BunnyCDN
-  uses: Bearologics/BunnyAction@v1
+  uses: Bearologics/BunnyAction@main
   with:
     source: "dist"
     storageZoneName: "myzone"
@@ -20,7 +20,7 @@ This action deploys the specified directory to BunnyCDN.
 
 ```
 - name: Upload to BunnyCDN
-  uses: Bearologics/BunnyAction@v1
+  uses: Bearologics/BunnyAction@main
   with:
     source: "dist"
     storageZoneName: "myzone"
@@ -31,7 +31,7 @@ This action deploys the specified directory to BunnyCDN.
 
 ```
 - name: Purge BunnyCDN
-  uses: Bearologics/BunnyAction@v1
+  uses: Bearologics/BunnyAction@main
   with:
     zoneId: "${{ secrets.BUNNY_CDN_PULL_ZONE_ID }}"
     zoneKey: "${{ secrets.BUNNY_CDN_ZONE_KEY }}"
